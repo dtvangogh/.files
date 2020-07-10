@@ -9,25 +9,40 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
-
-
-
 shopt -s autocd
-alias thanos='sudo rm -r'
-alias push='git push origin master'
-alias mit='git commit -m'
+
+alias sweep='python3 sweep.py'
+
+#GIT ALIASES
+alias a='git add --chmod=+x'
+alias m='git commit -m'
+alias gr='git rm'
+alias s='git status'
+alias ss='git status -s'
+alias p='git push origin master'
+
 alias key='chmod u+x *-*'
-alias add='git add --chmod=+x'
-alias em='emacs'
-alias lumos='. ./lumos'
-alias vimc='vim ~/.vimrc'
+alias del='echo "deleted"; sudo rm -rv'
+alias mkd='mkdir'
+alias garbage='emacs'
 alias v='vim'
-alias bash='vim ~/.bashrc'
-alias mkd='mkdir' 
 alias ls='ls -G'
 alias ll='ls -lG'
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='echo "deleted"; rm -v'
 
-
-
+function cd {
+    builtin cd "$@" && ls
+}
+function .. (){
+    local arg=${1:-1};
+    local dir=""
+    while [ $arg -gt 0 ]; do
+        dir="../$dir"
+        arg=$(($arg - 1));
+    done
+    cd $dir #>&/dev/null
+}
 
 
