@@ -1,0 +1,2 @@
+#/usr/bin/env bash
+cp ./.bashrc ./.vimrc ./.tmux.conf ~/
