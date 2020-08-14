@@ -10,10 +10,12 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 shopt -s autocd
-
+~/.vim/pack/themes/opt/solarized8/scripts/solarized8.sh
 alias sweep='python3 sweep.py'
+set -o vi	
 
 #GIT ALIASES
+alias ip='ubuntu@34.74.167.155'
 alias a='git add --chmod=+x'
 alias m='git commit -m'
 alias gr='git rm'
