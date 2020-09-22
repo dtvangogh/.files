@@ -16,7 +16,7 @@ set -o vi
 
 #GIT ALIASES
 alias ip='ubuntu@34.74.167.155'
-alias a='git add --chmod=+x'
+alias a='git add'
 alias m='git commit -m'
 alias gr='git rm'
 alias s='git status'
