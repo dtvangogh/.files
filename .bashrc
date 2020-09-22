@@ -8,7 +8,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\] at \[\033[32m\]\h\] \[\033[37m\]in \[\033[33m\]\W\[\033[m\]\$ "
 shopt -s autocd
 ~/.vim/pack/themes/opt/solarized8/scripts/solarized8.sh
 alias sweep='python3 sweep.py'
@@ -46,5 +46,6 @@ function .. (){
     done
     cd $dir #>&/dev/null
 }
+
 
 
