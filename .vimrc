@@ -1,4 +1,8 @@
 :command NT NERDTree
+:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+" for using mouse in TMUX vim
+set ttymouse=xterm2
+set mouse=a
 let g:solarized_termtrans = 1
 syntax enable
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -12,7 +16,6 @@ set splitbelow
 set number
 set relativenumber
 set ruler
-set cursorline
 set mouse=a
 set tabstop=8 shiftwidth=8
 set autoindent
@@ -38,5 +41,8 @@ set termguicolors
 
 set background=dark
 
-
-execute pathogen#infect()
+augroup FileTypeSpecificAutocommands
+	autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+	autocmd FileType c setlocal tabstop=4 shiftwidth=4 noexpandtab
+	autocmd FileType javascript setlocal tabstop=2 nofixendofline
+augroup END
